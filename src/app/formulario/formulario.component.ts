@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormControl, Validators, FormGroup } from '@angular/forms';
+import { FormControl, Validators, FormGroup, ValidatorFn, AbstractControl, ValidationErrors } from '@angular/forms';
 
 @Component({
   selector: 'app-formulario',
@@ -12,7 +12,7 @@ export class FormularioComponent {
   registerForm:FormGroup;
 
   emailControl=new FormControl("",[Validators.email, Validators.required]);
-  nameControl=new FormControl("",[Validators.required]);
+  nameControl=new FormControl("",[Validators.required, this.pepeValidator()]);
   lastNameControl=new FormControl("",[Validators.required]);
 
   
@@ -30,5 +30,17 @@ export class FormularioComponent {
       this.listado.push(this.registerForm.value);
       this.registerForm.reset();
     }
+  };
+
+  pepeValidator(): ValidatorFn{
+    return (control: AbstractControl): ValidationErrors | null=>{
+      if(control.value?.toLowerCase().includes("pepe")){
+        return{
+          pepe:true,
+        }
+      }
+      return null;
+    }
   }
+  
 }
