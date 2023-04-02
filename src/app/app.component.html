@@ -1,10 +1,2 @@
-<h1 *ngIf="load; else listado">Cargando listado de alumnos...</h1>
-
-<ng-template #listado>
-    <div [ngClass]="estilo ? 'primero' : 'segundo'">
-    <ul>
-        <li *ngFor="let alumno of alumnos">{{alumno | uppercase}}</li>
-    </ul>
-</div>
-</ng-template>
+<app-formulario></app-formulario>
 

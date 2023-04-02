@@ -1,0 +1,61 @@
+<h1 class=" container p-2 w-50 mt-5">FORMULARIO DE REGISTRO</h1>
+<form class=" container p-2 w-50" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+    <div class="mb-3 ">
+        <label for="email" class="form-label" >Email</label>
+        <input type="email" class="form-control" id="email" aria-describedby="emailHelp" formControlName="email"
+        [class.is-invalid]="emailControl.invalid && emailControl.touched">
+        <div class="invalid-feedback" *ngIf="emailControl.invalid">
+        Email invalido
+        </div>
+    </div>
+    <div class="mb-3">
+        <label for="nombre" class="form-label">Nombre</label>
+        <input type="text" class="form-control" id="nombre" formControlName="name"
+        [class.is-invalid]="nameControl.invalid && nameControl.touched">
+        <div *ngIf="nameControl.invalid" class="invalid-feedback">
+            Campo requerido
+        </div>
+    </div>
+    <div class="mb-3">
+        <label for="apellido" class="form-label">Apellido</label>
+        <input type="text" class="form-control" id="apellido" formControlName="lastName"
+        [class.is-invalid]="lastNameControl.invalid && lastNameControl.touched">
+        <div *ngIf="lastNameControl.invalid" class="invalid-feedback">
+        Campo requerido
+        </div>
+    </div>
+    <button type="submit" class="btn btn-primary"
+    [class.disabled]="lastNameControl.invalid || nameControl.invalid || emailControl.invalid">Submit</button>
+  </form>
+  <div>
+    <h2 class=" container p-2 w-50 mt-5">Listado</h2>
+    <!-- <ul class=" container p-2 w-50 ">
+        <li *ngFor="let item of listado">
+            {{item.name | json}}
+        </li>
+    </ul> -->
+    <table class="table container p-2 w-50">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Apellido</th>
+            <th scope="col">Email</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of listado">
+            <th scope="row">{{listado.indexOf(item) +1}}</th>
+            <td>
+                {{item.name}}
+            </td>
+            <td>
+                {{item.lastName}}
+            </td>
+            <td colspan="2">
+                {{item.email}}
+            </td>
+          </tr>
+        </tbody>
+      </table>
+  </div>
