@@ -6,3 +6,6 @@ body{
     --navbar_height:64px;
     --aside_width:25%;
 }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

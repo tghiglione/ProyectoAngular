@@ -7,6 +7,7 @@ import { FormControl, Validators, FormGroup, ValidatorFn, AbstractControl, Valid
   styleUrls: ['./formulario.component.css']
 })
 export class FormularioComponent {
+
   listado: any[]=[];
 
   registerForm:FormGroup;
