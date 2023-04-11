@@ -1,18 +1,16 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HijoComponent } from './hijo.component';
+import { FontSizeDirective } from './font-size.directive';
 
 
 
 @NgModule({
-  declarations: [
-    HijoComponent
-  ],
+  declarations: [FontSizeDirective],
   imports: [
     CommonModule
   ],
   exports:[
-    HijoComponent
+    FontSizeDirective
   ]
 })
-export class HijoModule { }
+export class DirectivesModule { }

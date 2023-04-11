@@ -4,25 +4,21 @@ import { AppComponent } from './app.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DashboardModule } from './dashboard/dashboard.module';
-import { FormularioComponent } from './formulario/formulario.component';
-import { TablaComponent } from './tabla/tabla.component';
-import { TablaModule } from './tabla/tabla.module';
-import { PadreModule } from './padre/padre.module';
+import { FormularioModule } from './formulario/formulario.module';
+
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    FormularioComponent,
   ],
   imports: [
     BrowserModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
     DashboardModule,
-    TablaModule,
-    PadreModule
+    FormularioModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,27 +1,26 @@
-<table class="container w-50" mat-table [dataSource]="dataSource" class="mat-elevation-z8">
-    <ng-container matColumnDef="id">
-      <th mat-header-cell *matHeaderCellDef> No. </th>
-      <td mat-cell *matCellDef="let element"> {{element.id}} </td>
-    </ng-container>
-  
-    <ng-container matColumnDef="nombre">
-      <th mat-header-cell *matHeaderCellDef> Nombre </th>
-      <td mat-cell *matCellDef="let element"> {{element.nombre}} </td>
-    </ng-container>
-  
-    <ng-container matColumnDef="apellido">
-      <th mat-header-cell *matHeaderCellDef> Apellido </th>
-      <td mat-cell *matCellDef="let element"> {{element.apellido}} </td>
-    </ng-container>
-  
-    <ng-container matColumnDef="email">
-      <th mat-header-cell *matHeaderCellDef> Email </th>
-      <td mat-cell *matCellDef="let element"> {{element.email}} </td>
-    </ng-container>
-  
-    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-</table>
-
-
-  
+<div  class="container p-2 w-50">
+  <h2 class="p-2 w-100 ">Listado</h2>
+  <table class="table p-2 w-100">
+      <thead>
+        <tr>
+          <th scope="col" [appFontSize]="20">No.</th>
+          <th scope="col" [appFontSize]="20">Nombre completo</th>
+          <th scope="col" [appFontSize]="20">Email</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of items">
+          <th scope="row" [appFontSize]="16">{{items.indexOf(item) +1}}</th>
+          <td [appFontSize]="16">
+              {{item | nombreApellido}}
+          </td>
+          <td colspan="2" [appFontSize]="16">
+              {{item.email}}
+          </td>
+          <td colspan="2" [appFontSize]="16">
+            <button mat-raised-button color="primary" (click)="eliminarDato(item)"> Eliminar </button>
+        </td>
+        </tr>
+      </tbody>
+    </table>
+</div>
