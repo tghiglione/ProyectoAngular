@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { TablaComponent } from './tabla.component';
 import { SharedModule } from '../shared/shared.module';
 import {MatButtonModule} from '@angular/material/button';
+import {MatTableModule} from '@angular/material/table';
 
 
 
@@ -11,7 +12,8 @@ import {MatButtonModule} from '@angular/material/button';
   imports: [
     CommonModule,
     SharedModule,
-    MatButtonModule
+    MatButtonModule,
+    MatTableModule
   ],
   exports:[
     TablaComponent,

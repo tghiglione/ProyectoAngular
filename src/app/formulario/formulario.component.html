@@ -64,8 +64,7 @@
             Email es <strong>requerido</strong>
             </mat-error>
         </div>
-        <button type="submit" class="btn btn-primary"
-        [class.disabled]="lastNameControl.invalid || nameControl.invalid || emailControl.invalid">Submit</button>
+        <button mat-raised-button color="primary" type="submit" [disabled]="registerForm.invalid">Agregar</button>
     </form>
 </div>
 <app-tabla [items]="dataSource"></app-tabla>
