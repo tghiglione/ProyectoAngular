@@ -1,4 +1,4 @@
-<div class="container w-50 mt-5" *ngIf="mostrarBienvenida==false">
+<div class="container w-50 mt-5" [ngClass]="mostrarBienvenida ? 'ocultarUser':'mostrarUser'">
     <h2>Ingrese usuario</h2>
     <form class="p-2 w-100" [formGroup]="logInForm" (ngSubmit)="logIn()">
         <div>
@@ -34,10 +34,8 @@
         </div>
     </form>
 </div>
-<div class="container w-50 p-2 mt-5" *ngIf="mostrarBienvenida==true">
+<div class="container w-50 p-2 mt-5" [ngClass]="mostrarBienvenida ? 'mostrarUser':'ocultarUser'">
     <h2>¡Bienvenido!</h2>
-</div>
-<div class="container w-50 ">
     <h2>
         {{(usuario$ |async)?.name}} {{(usuario$ |async)?.lastName}}
     </h2>

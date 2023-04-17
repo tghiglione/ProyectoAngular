@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { LoginService } from '../services/login.service';
-import { Observable } from 'rxjs';
+import { Observable, map } from 'rxjs';
 import { Estudiantes } from '../formulario/formulario.component';
 
 @Component({
@@ -9,9 +9,9 @@ import { Estudiantes } from '../formulario/formulario.component';
   templateUrl: './user-log.component.html',
   styleUrls: ['./user-log.component.css']
 })
-export class UserLogComponent{
-
-  usuario$: Observable<Estudiantes> | undefined
+export class UserLogComponent {
+  
+  usuario$: Observable<Estudiantes> | undefined=undefined;
 
   logInForm:FormGroup;
 
@@ -33,21 +33,18 @@ export class UserLogComponent{
   
   logIn(): void {
     if(this.logInForm.valid){
+      this.mostrarBienvenida=true;
       this.LoginService.login({
         name: this.logInForm.value.nombre,
-        lastName:this.logInForm.value.apellido,
-        email:this.logInForm.value.mail
-      })
-      this.mostrarBienvenida=true;
-      console.log(this.mostrarBienvenida) 
+        lastName: this.logInForm.value.apellido,
+        email: this.logInForm.value.mail
+      }) 
       this.logInForm.reset();
     }   
   }
 
   logOut():void{
     this.mostrarBienvenida=false;
-    this.usuario$=undefined;
-    console.log(this.mostrarBienvenida)
   }
   
 }
