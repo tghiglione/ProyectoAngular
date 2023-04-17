@@ -33,7 +33,6 @@ export class FormularioComponent {
     if(this.registerForm.valid){
       this.dataSource.push(this.registerForm.value);
       this.registerForm.reset();
-      console.log(this.dataSource)
     }
   };
 

@@ -5,6 +5,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DashboardModule } from './dashboard/dashboard.module';
 import { FormularioModule } from './formulario/formulario.module';
+import { UserLogComponent } from './user-log/user-log.component';
+import { UserLogModule } from './user-log/user-log.module';
 
 
 
@@ -18,7 +20,8 @@ import { FormularioModule } from './formulario/formulario.module';
     ReactiveFormsModule,
     BrowserAnimationsModule,
     DashboardModule,
-    FormularioModule
+    FormularioModule,
+    UserLogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,45 @@
+<div class="container w-50 mt-5" *ngIf="mostrarBienvenida==false">
+    <h2>Ingrese usuario</h2>
+    <form class="p-2 w-100" [formGroup]="logInForm" (ngSubmit)="logIn()">
+        <div>
+            <mat-form-field appearance="fill" class="w-100">
+                <mat-label>Nombre</mat-label>
+                <input matInput id="nombre" formControlName="nombre"
+                [class.is-invalid]="nombreControl.invalid && nombreControl.touched">
+            </mat-form-field>
+            <mat-error *ngIf="nombreControl.hasError('required') && nombreControl.touched">
+                Nombre es <strong>requerido</strong>
+            </mat-error>
+            <br>
+            <mat-form-field appearance="fill" class="w-100">
+                <mat-label>Apellido</mat-label>
+                <input matInput id="apellido" formControlName="apellido"
+                [class.is-invalid]="apellidoControl.invalid && apellidoControl.touched">
+            </mat-form-field>
+            <mat-error *ngIf="apellidoControl.hasError('required') && apellidoControl.touched">
+                Apellido es <strong>requerido</strong>
+            </mat-error>
+            <mat-form-field class="w-100">
+                <mat-label>Email</mat-label>
+                <input matInput id="email" aria-describedby="emailHelp" formControlName="mail"
+                [class.is-invalid]="mailControl.invalid && mailControl.touched">
+            </mat-form-field>
+            <mat-error *ngIf="mailControl.hasError('email') && mailControl.touched && !mailControl.hasError('required')">
+                Ingrese un email valido
+            </mat-error>
+            <mat-error *ngIf="mailControl.hasError('required') && mailControl.touched">
+            Email es <strong>requerido</strong>
+            </mat-error>
+            <button mat-stroked-button color="primary" type="submit">Log in</button>
+        </div>
+    </form>
+</div>
+<div class="container w-50 p-2 mt-5" *ngIf="mostrarBienvenida==true">
+    <h2>¡Bienvenido!</h2>
+</div>
+<div class="container w-50 ">
+    <h2>
+        {{(usuario$ |async)?.name}} {{(usuario$ |async)?.lastName}}
+    </h2>
+    <button mat-raised-button color="warn" (click)="logOut()">Log out</button>
+</div> 
