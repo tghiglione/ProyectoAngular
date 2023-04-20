@@ -1,18 +1,13 @@
 import { Component } from '@angular/core';
 import { FormControl, Validators, FormGroup, ValidatorFn, AbstractControl, ValidationErrors } from '@angular/forms';
-
-export interface Estudiantes {
-  name: string;
-  lastName: string;
-  email: string;
-} 
+import { Estudiantes } from 'src/app/core/models';
 
 @Component({
-  selector: 'app-formulario',
-  templateUrl: './formulario.component.html',
-  styleUrls: ['./formulario.component.css']
+  selector: 'app-alumnos',
+  templateUrl: './alumnos.component.html',
+  styleUrls: ['./alumnos.component.css']
 })
-export class FormularioComponent {
+export class AlumnosComponent {
   dataSource: Estudiantes[] = [];
   
   registerForm:FormGroup;
@@ -48,3 +43,5 @@ export class FormularioComponent {
   }
  
 }
+export { Estudiantes };
+

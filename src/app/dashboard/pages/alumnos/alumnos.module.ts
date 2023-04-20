@@ -5,13 +5,14 @@ import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
-import { FormularioComponent } from './formulario.component';
+import { AlumnosComponent } from './alumnos.component';
 import {BrowserModule} from '@angular/platform-browser';
-import { TablaModule } from '../tabla/tabla.module';
+import { AlumnosTablaModule } from '../alumnosTabla/alumnosTabla.module';
+
 
 
 @NgModule({
-  declarations: [FormularioComponent],
+  declarations: [AlumnosComponent],
   imports: [
     CommonModule,
     MatFormFieldModule,
@@ -21,11 +22,11 @@ import { TablaModule } from '../tabla/tabla.module';
     ReactiveFormsModule,
     FormsModule,
     BrowserModule,
-    TablaModule
+    AlumnosTablaModule
   ],
-  bootstrap: [FormularioComponent],
+  bootstrap: [AlumnosComponent],
   exports:[
-    FormularioComponent
+    AlumnosComponent
   ]
 })
-export class FormularioModule { }
+export class AlumnosModule { }

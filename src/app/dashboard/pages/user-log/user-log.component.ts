@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { LoginService } from '../services/login.service';
-import { Observable, map } from 'rxjs';
-import { Estudiantes } from '../formulario/formulario.component';
+import { LoginService } from '../../../core/services/login.service';
+import { Observable } from 'rxjs';
+import { Estudiantes } from 'src/app/core/models';
 
 @Component({
   selector: 'app-user-log',

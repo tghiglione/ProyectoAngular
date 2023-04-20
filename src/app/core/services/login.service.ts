@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { Observable, Subject, filter, map } from 'rxjs';
-import { Estudiantes } from '../formulario/formulario.component';
+import { Observable, Subject, map } from 'rxjs';
+import { Estudiantes } from '../models/index';
 
 @Injectable({
   providedIn: 'root'
