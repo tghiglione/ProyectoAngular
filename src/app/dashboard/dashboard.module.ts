@@ -7,6 +7,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { AlumnosModule } from './pages/alumnos/alumnos.module';
 import { UserLogModule } from './pages/user-log/user-log.module';
+import { CursosModule } from './pages/cursos/cursos.module';
+import { AppRoutingModule } from '../app-routing.module';
 
 
 @NgModule({
@@ -20,7 +22,9 @@ import { UserLogModule } from './pages/user-log/user-log.module';
     MatButtonModule,
     MatSidenavModule,
     AlumnosModule,
-    UserLogModule
+    UserLogModule,
+    CursosModule,
+    AppRoutingModule
   ],
   exports: [
     DashboardComponent,

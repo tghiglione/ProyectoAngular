@@ -4,6 +4,7 @@ import { AppComponent } from './app.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DashboardModule } from './dashboard/dashboard.module';
+import { AppRoutingModule } from './app-routing.module';
 
 
 
@@ -18,6 +19,8 @@ import { DashboardModule } from './dashboard/dashboard.module';
     ReactiveFormsModule,
     BrowserAnimationsModule,
     DashboardModule,
+    AppRoutingModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
