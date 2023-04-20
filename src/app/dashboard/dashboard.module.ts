@@ -9,6 +9,7 @@ import { AlumnosModule } from './pages/alumnos/alumnos.module';
 import { UserLogModule } from './pages/user-log/user-log.module';
 import { CursosModule } from './pages/cursos/cursos.module';
 import { AppRoutingModule } from '../app-routing.module';
+import { CursosTablaComponent } from './pages/cursos-tabla/cursos-tabla.component';
 
 
 @NgModule({

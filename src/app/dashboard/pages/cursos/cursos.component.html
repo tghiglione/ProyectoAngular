@@ -1,1 +1,27 @@
-<p>cursos works!</p>
+<div class=" container p-2 w-50 mt-5"> 
+    <h1 class=" p-2 w-50 mt-5">REGISTRO DE CURSOS</h1>
+    <form class=" p-2 w-100" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+        <div class="mb-3">
+            <mat-form-field class="w-100">
+                <mat-label>Curso</mat-label>
+                <input matInput id="curso" formControlName="curso"
+                [class.is-invalid]="cursoControl.invalid && cursoControl.touched">
+            </mat-form-field>
+            <mat-error *ngIf="cursoControl.hasError('required') && cursoControl.touched">
+                Campo <strong>requerido</strong>
+            </mat-error>
+        </div>
+        <div class="mb-3">
+            <mat-form-field class="w-100">
+                <mat-label>Comision</mat-label>
+                <input matInput type="number" id="comision" formControlName="comision"
+                [class.is-invalid]="comisionControl.invalid && comisionControl.touched">
+            </mat-form-field>
+            <mat-error *ngIf="comisionControl.hasError('required') && comisionControl.touched">
+                Campo <strong>requerido</strong>
+            </mat-error>
+        </div>
+        <button mat-raised-button color="primary" type="submit" [disabled]="registerForm.invalid">Agregar</button>
+    </form>
+</div>
+<app-cursos-tabla [items]="dataSource"></app-cursos-tabla>

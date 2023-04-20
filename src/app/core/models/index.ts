@@ -3,3 +3,13 @@ export interface Estudiantes {
     lastName: string;
     email: string;
   } 
+
+export interface NavLinks{
+  path:string,
+  title:string
+}
+
+export interface Cursos{
+  curso:string,
+  comision:number
+}

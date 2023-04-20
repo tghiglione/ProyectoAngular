@@ -7,7 +7,7 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./alumnosTabla.component.css']
 })
 export class AlumnosTablaComponent {
-  displayedColumns: string[] = ['name', 'lastName', 'email'];
+
   @Input() 
   items:any[]=[];
 

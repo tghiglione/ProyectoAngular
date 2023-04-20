@@ -1,0 +1,26 @@
+<div  class="container p-2 w-50">
+    <h2 class="p-2 w-100 ">Listado</h2>
+    <table class="table p-2 w-100">
+        <thead>
+          <tr>
+            <th scope="col" [appFontSize]="20">No.</th>
+            <th scope="col" [appFontSize]="20">Curso</th>
+            <th scope="col" [appFontSize]="20">Comision</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of items">
+            <th scope="row" [appFontSize]="16">{{items.indexOf(item) +1}}</th>
+            <td [appFontSize]="16">
+                {{item.curso}}
+            </td>
+            <td colspan="2" [appFontSize]="16">
+                {{item.comision}}
+            </td>
+            <td colspan="2" [appFontSize]="16">
+              <button mat-raised-button color="primary" (click)="eliminarDato(item)"> Eliminar </button>
+          </td>
+          </tr>
+        </tbody>
+      </table>   
+  </div>

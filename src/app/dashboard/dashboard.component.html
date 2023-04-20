@@ -6,16 +6,15 @@
         <span>App Alumnos</span>
         <span class="example-spacer"></span>
     </mat-toolbar>
-    <mat-drawer #drawer class="example-sidenav" mode="side">
-        <h3>MENU</h3>
-        <ul>
-            <li>Home</li>
-            <li>Alumnos</li>
-            <li>Profesores</li>
+    <mat-drawer #drawer class="sidenav" mode="side">
+        <h3 class="menu-title">MENU</h3>
+        <ul class="menu">
+            <li class="menu-item"><a class="menu-link" [routerLink]="links[0].path">{{links[0].title}}</a></li>
+            <li class="menu-item"><a class="menu-link" [routerLink]="links[1].path">{{links[1].title}}</a></li>
+            <li class="menu-item"><a class="menu-link" [routerLink]="links[2].path">{{links[2].title}}</a></li>
         </ul>
     </mat-drawer>
-    <!-- <app-user-log></app-user-log>
-    <app-alumnos></app-alumnos> -->
+    <app-user-log></app-user-log>
     <router-outlet></router-outlet>
 </mat-drawer-container>
 
