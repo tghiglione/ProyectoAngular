@@ -1,4 +1,6 @@
 import { Component, Input } from '@angular/core';
+import { Observable } from 'rxjs';
+import { Estudiantes } from 'src/app/core/models';
 
 
 @Component({
@@ -9,7 +11,7 @@ import { Component, Input } from '@angular/core';
 export class AlumnosTablaComponent {
 
   @Input() 
-  items:any[]=[];
+  items:Estudiantes[] =[];
 
   eliminarDato(item: any) :void{
     let index = this.items.findIndex(x => x.email === item.email)

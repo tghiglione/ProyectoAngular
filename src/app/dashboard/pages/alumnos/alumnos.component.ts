@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormControl, Validators, FormGroup, ValidatorFn, AbstractControl, ValidationErrors } from '@angular/forms';
 import { Estudiantes } from 'src/app/core/models';
+import { AlumnosServiceService } from './alumnos-service.service';
 
 @Component({
   selector: 'app-alumnos',
@@ -8,6 +9,7 @@ import { Estudiantes } from 'src/app/core/models';
   styleUrls: ['./alumnos.component.css']
 })
 export class AlumnosComponent {
+
   dataSource: Estudiantes[] = [];
   
   registerForm:FormGroup;
@@ -16,7 +18,11 @@ export class AlumnosComponent {
   nameControl=new FormControl("",[Validators.required, this.pepeValidator()]);
   lastNameControl=new FormControl("",[Validators.required]);
 
-  constructor(){
+  constructor(private AlumnosService: AlumnosServiceService){
+    this.AlumnosService.obtenerAlumnos()
+    .subscribe((alumnos) => {
+      this.dataSource = alumnos;
+    })
     this.registerForm= new FormGroup({
       email:this.emailControl,
       name:this.nameControl,
