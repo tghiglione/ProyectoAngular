@@ -1,0 +1,22 @@
+{
+  "usuarios": [
+    {
+      "id": 1,
+      "nombre": "Tomas",
+      "apellido": "Ghiglione",
+      "email": "tomasghiglione@gmail.com",
+      "password": "12345",
+      "token": "sjdofjspdjfp23r25cds3vv5sv3sd",
+      "role": "admin"
+    },
+    {
+      "nombre": "Juan",
+      "apellido": "Perez",
+      "email": "juanperez@gmail.com",
+      "password": "12345",
+      "token": "jfajfoqwfaf45a4fw6532",
+      "role": "admin",
+      "id": 2
+    }
+  ]
+}
