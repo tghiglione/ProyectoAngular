@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 import { NavLinks } from '../core/models';
+import { Observable, Subject, Subscribable } from 'rxjs';
+import { LoginService } from '../core/services/login.service';
+import { Estudiantes, LogInFormValue } from '../core/models/index';
 
 @Component({
   selector: 'app-dashboard',
@@ -7,6 +10,13 @@ import { NavLinks } from '../core/models';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent {
+
+  usuario$: Observable<Estudiantes>
+  
+  constructor(private loginService: LoginService){
+    this.usuario$=this.loginService.obtenerUsuario();
+  }
+
   showFiller = false;
 
   links: NavLinks[]=[
@@ -23,4 +33,5 @@ export class DashboardComponent {
       title: 'Cursos'
     }  
   ]
+  
 }

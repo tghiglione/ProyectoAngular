@@ -13,3 +13,8 @@ export interface Cursos{
   curso:string,
   comision:number
 }
+
+export interface LogInFormValue {
+  email: string;
+  password:string
+}

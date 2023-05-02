@@ -6,11 +6,22 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { AlumnosModule } from './pages/alumnos/alumnos.module';
-import { UserLogModule } from './pages/user-log/user-log.module';
+import { UserLogModule } from '../user-log/user-log.module';
 import { CursosModule } from './pages/cursos/cursos.module';
 import { AppRoutingModule } from '../app-routing.module';
-import { CursosTablaComponent } from './pages/cursos-tabla/cursos-tabla.component';
+import { RouterModule, Routes } from '@angular/router';
+import { CursosComponent } from './pages/cursos/cursos.component';
+import { AlumnosComponent } from './pages/alumnos/alumnos.component';
 
+const routes: Routes = [{
+  path: 'alumnos',
+  component:AlumnosComponent
+},
+{
+  path: 'cursos',
+  component:CursosComponent
+}
+]
 
 @NgModule({
   declarations: [
@@ -22,10 +33,8 @@ import { CursosTablaComponent } from './pages/cursos-tabla/cursos-tabla.componen
     MatIconModule,
     MatButtonModule,
     MatSidenavModule,
-    AlumnosModule,
     UserLogModule,
-    CursosModule,
-    AppRoutingModule
+    RouterModule.forChild(routes)
   ],
   exports: [
     DashboardComponent,

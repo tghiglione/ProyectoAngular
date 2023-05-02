@@ -1,26 +1,36 @@
 import { Injectable } from '@angular/core';
-import { Observable, Subject, map } from 'rxjs';
-import { Estudiantes } from '../models/index';
+import { BehaviorSubject, Observable, Subject, map } from 'rxjs';
+import { Estudiantes, LogInFormValue } from '../models/index';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
 })
 export class LoginService {
 
-  private userLog$= new Subject<Estudiantes>();
-  
-  
-  constructor() { 
-    const filtro=this.userLog$.pipe(
-      map(val=>val.name.toUpperCase()))
-    filtro.subscribe(val=>alert("Bienvenido "+val))
-  }
+  private userLog$= new BehaviorSubject<Estudiantes>({name:"",lastName:"",email:""});
+
+  constructor(private router: Router) { }
 
   obtenerUsuario():Observable<Estudiantes>{
     return this.userLog$.asObservable()
   }
 
-  login(usuario:Estudiantes){
-    this.userLog$.next(usuario)
+  login(formValue: Estudiantes):void{
+    console.log(formValue)
+    const usuario={
+      name: formValue.name,
+      lastName: formValue.lastName,
+      email: formValue.email,
+    };
+    this.userLog$.next(usuario);
+    localStorage.setItem('auth-user', JSON.stringify(usuario));
+    this.router.navigate(['dashboard']);
+  }
+  logout(): void {
+    localStorage.removeItem('auth-user');
+    this.userLog$.next({name:"",lastName:"",email:""});
+    this.router.navigate(['auth']);
   }
 }
+
