@@ -6,6 +6,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DashboardModule } from './dashboard/dashboard.module';
 import { AppRoutingModule } from './app-routing.module';
 import { UserLogModule } from './user-log/user-log.module';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { UserLogModule } from './user-log/user-log.module';
     BrowserAnimationsModule,
     DashboardModule,
     AppRoutingModule,
-    UserLogModule
+    UserLogModule,
+    HttpClientModule
     
   ],
   providers: [],

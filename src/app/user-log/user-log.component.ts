@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { LoginService } from '../core/services/login.service';
 import { Observable } from 'rxjs';
-import { Estudiantes, LogInFormValue } from 'src/app/core/models';
+import { Estudiantes, LogInFormValue, Usuario } from 'src/app/core/models';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -12,13 +12,13 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class UserLogComponent {
 
+  hide = true;
+
   emailControl = new FormControl('', [Validators.email,Validators.required],);
-  nombreControl = new FormControl('', [Validators.required]);
-  apellidoControl = new FormControl('', [Validators.required]);
+  passwordControl= new FormControl('', [Validators.required]);
   logInForm = new FormGroup({
     email: this.emailControl,
-    name: this.nombreControl,
-    lastName: this.apellidoControl
+    password:this.passwordControl,
   });
 
   constructor(private LoginService:LoginService, private activatedRoute: ActivatedRoute){
@@ -27,7 +27,7 @@ export class UserLogComponent {
   
   logIn(): void {
     if(this.logInForm.valid){
-      this.LoginService.login(this.logInForm.value as Estudiantes)
+      this.LoginService.login(this.logInForm.value as Usuario)
     }else{
       this.logInForm.markAllAsTouched();
     } 

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavLinks } from '../core/models';
+import { NavLinks, Usuario } from '../core/models';
 import { Observable, Subject, Subscribable } from 'rxjs';
 import { LoginService } from '../core/services/login.service';
 import { Estudiantes, LogInFormValue } from '../core/models/index';
@@ -11,7 +11,7 @@ import { Estudiantes, LogInFormValue } from '../core/models/index';
 })
 export class DashboardComponent {
 
-  usuario$: Observable<Estudiantes>
+  usuario$: Observable<Usuario>
   
   constructor(private loginService: LoginService){
     this.usuario$=this.loginService.obtenerUsuario();
@@ -33,5 +33,7 @@ export class DashboardComponent {
       title: 'Cursos'
     }  
   ]
-  
+  logOut(): void {
+    this.loginService.logout()
+  } 
 }
