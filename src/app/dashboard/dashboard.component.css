@@ -39,3 +39,13 @@
     padding-left: 0;
     padding-top: 20px;
   }
+  .logout{
+    flex-grow: 1;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+  }
+  .usuario{
+    margin-bottom: 0;
+    padding: 10px;
+  }

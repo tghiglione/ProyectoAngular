@@ -21,7 +21,7 @@ export class DashboardComponent {
 
   links: NavLinks[]=[
     {
-      path:'dashboard',
+      path:'',
       title: 'Home'
     },
     {

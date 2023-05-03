@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable, Subject, catchError, map, throwError } from 'rxjs';
-import { Estudiantes, LogInFormValue, Usuario } from '../models/index';
+import { BehaviorSubject, Observable, catchError, map, throwError } from 'rxjs';
+import { Usuario } from '../models/index';
 import { Router } from '@angular/router';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
@@ -31,7 +31,7 @@ export class LoginService {
         const usuarioAuth=usuarios[0];
         if(usuarioAuth){
           this.userLog$.next(usuarioAuth);
-          localStorage.setItem('token', JSON.stringify(usuarioAuth.token));
+          localStorage.setItem('user', JSON.stringify(usuarioAuth));
           this.router.navigate(['dashboard']);
         }else{
           alert('user o password incorrecto')

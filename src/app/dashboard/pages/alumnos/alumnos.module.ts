@@ -9,8 +9,6 @@ import { AlumnosComponent } from './alumnos.component';
 import {BrowserModule} from '@angular/platform-browser';
 import { AlumnosTablaModule } from '../alumnosTabla/alumnosTabla.module';
 
-
-
 @NgModule({
   declarations: [AlumnosComponent],
   imports: [

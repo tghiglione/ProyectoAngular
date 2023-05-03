@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DashboardComponent } from './dashboard.component';
 import { MatSidenavModule } from '@angular/material/sidenav';
@@ -13,15 +13,17 @@ import { RouterModule, Routes } from '@angular/router';
 import { CursosComponent } from './pages/cursos/cursos.component';
 import { AlumnosComponent } from './pages/alumnos/alumnos.component';
 
-const routes: Routes = [{
-  path: 'alumnos',
-  component:AlumnosComponent
-},
-{
-  path: 'cursos',
-  component:CursosComponent
-}
+const routes: Routes = [
+  {
+    path:'cursos',
+    component:CursosComponent
+  },
+  {
+    path:'alumnos',
+    component:AlumnosComponent
+  }
 ]
+
 
 @NgModule({
   declarations: [

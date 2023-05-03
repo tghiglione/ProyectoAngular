@@ -5,12 +5,11 @@
         </button>
         <span>App Alumnos</span>
         <span class="example-spacer"></span>
+        <div  class="logout">
+        <h3 class="usuario">{{ (usuario$ | async)?.nombre }} {{ (usuario$ | async)?.apellido }}</h3>
+        <button mat-stroked-button color="basic" (click)="logOut()">Log out</button>
+        </div>
     </mat-toolbar>
-    <div  class="m-5">
-        <h1>¡Bienvenido!</h1>
-    <h3>{{ (usuario$ | async)?.nombre }} {{ (usuario$ | async)?.apellido }}</h3>
-    <button mat-raised-button color="primary" (click)="logOut()">Log out</button>
-    </div>
     <mat-drawer #drawer class="sidenav" mode="side">
         <h3 class="menu-title">MENU</h3>
         <ul class="menu">
@@ -19,8 +18,10 @@
             <li class="menu-item"><a class="menu-link" [routerLink]="links[2].path">{{links[2].title}}</a></li>
         </ul>
     </mat-drawer>
+    <h1 class="m-5">¡Bienvenido!</h1>
     <router-outlet></router-outlet>
 </mat-drawer-container>
+
 
 
 

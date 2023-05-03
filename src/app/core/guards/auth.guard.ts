@@ -11,14 +11,23 @@ export class AuthGuard implements CanActivate {
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-      return this.loginService.verificarToken().pipe(map((usuarioAuth)=>{
-        if(!usuarioAuth){
-          return this.router.createUrlTree(['auth'])
-        }else{
-          return true
+      return this.loginService.verificarToken().pipe(map((autenticado) => {
+        if (autenticado) {
+          return true; // Si el usuario está autenticado, permitimos el acceso al componente de home
+        } else {
+          return this.router.createUrlTree(['auth']); // Si el usuario no está autenticado, lo redirigimos al componente de login
+          
         }
       }))
-  }
-  
-  
-}
+    }
+  } 
+
+/*       PRUEBA A VER SI FUNCIONA EL GUARD. SI FUNCIONA CON ESTO*/                    
+     /*  const ejemplo=false;
+      if(ejemplo){
+        return true;
+      }else{
+        return this.router.createUrlTree(['auth']);
+      }
+  }  */
+

@@ -5,15 +5,17 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
-import { RouterModule, Routes } from '@angular/router';
-import { DashboardComponent } from '../dashboard/dashboard.component';
+import { RouterModule, Routes } from '@angular/router';8
 import { MatIconModule } from '@angular/material/icon';
+import { DashboardComponent } from '../dashboard/dashboard.component';
+import { AuthGuard } from '../core/guards/auth.guard';
 
-const routes: Routes = [{
-  path: 'auth',
-  component:UserLogComponent,
+const routes: Routes = [ {
+  path: 'dashboard',
+  component: DashboardComponent,
+  /* canActivate:[AuthGuard], */
   loadChildren:()=>import('../dashboard/dashboard.module').then(m=>m.DashboardModule)
-}]
+},]
 
 @NgModule({
   declarations: [UserLogComponent],
