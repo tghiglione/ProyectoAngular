@@ -23,11 +23,13 @@ export class AuthGuard implements CanActivate {
   } 
 
 /*       PRUEBA A VER SI FUNCIONA EL GUARD. SI FUNCIONA CON ESTO*/                    
-     /*  const ejemplo=false;
+      /* const ejemplo=true;
       if(ejemplo){
+        console.log(ejemplo)
         return true;
       }else{
         return this.router.createUrlTree(['auth']);
       }
-  }  */
+  } 
+} */
 

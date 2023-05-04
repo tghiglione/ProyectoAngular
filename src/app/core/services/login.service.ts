@@ -30,8 +30,8 @@ export class LoginService {
       next:(usuarios)=>{
         const usuarioAuth=usuarios[0];
         if(usuarioAuth){
+          localStorage.setItem('token', JSON.stringify(usuarioAuth.token));
           this.userLog$.next(usuarioAuth);
-          localStorage.setItem('user', JSON.stringify(usuarioAuth));
           this.router.navigate(['dashboard']);
         }else{
           alert('user o password incorrecto')
@@ -70,7 +70,7 @@ export class LoginService {
             localStorage.setItem('token', usuarioAutenticado.token)
             this.userLog$.next(usuarioAutenticado);
           }
-          return !!usuarioAutenticado;
+          return true;
         }),
         catchError((err) => {
           alert('Error al verificar el token');

@@ -31,6 +31,7 @@ const routes: Routes = [ {
   ],
   exports:[
     UserLogComponent
-  ]
+  ],
+  providers:[AuthGuard]
 })
 export class UserLogModule { }

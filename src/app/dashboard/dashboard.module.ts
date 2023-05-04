@@ -13,6 +13,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { CursosComponent } from './pages/cursos/cursos.component';
 import { AlumnosComponent } from './pages/alumnos/alumnos.component';
 
+
 const routes: Routes = [
   {
     path:'cursos',
