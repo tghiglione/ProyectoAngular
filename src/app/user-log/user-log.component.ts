@@ -1,8 +1,7 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { LoginService } from '../core/services/login.service';
-import { Observable, map } from 'rxjs';
-import { Estudiantes, LogInFormValue, Usuario } from 'src/app/core/models';
+import { LogInFormValue, Usuario } from 'src/app/core/models';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -26,10 +25,10 @@ export class UserLogComponent {
   }
   
   logIn(): void {
-    if(this.logInForm.valid){
-      this.LoginService.login(this.logInForm.value as Usuario)
-    }else{
+    if(this.logInForm.invalid){
       this.logInForm.markAllAsTouched();
+    }else{
+      this.LoginService.login(this.logInForm.value as LogInFormValue)
     } 
     this.logInForm.reset();
   }   

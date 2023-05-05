@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable, catchError, map, throwError } from 'rxjs';
-import { Usuario } from '../models/index';
+import { LogInFormValue, Usuario } from '../models/index';
 import { Router } from '@angular/router';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
@@ -25,13 +25,17 @@ export class LoginService {
     return this.userLog$.asObservable()
   }
 
-  login(formValue: Usuario):void{
+  establecerUserAuth(user:Usuario):void{
+    this.userLog$.next(user);
+  }
+
+  login(formValue: LogInFormValue):void{
     this.httpClient.get<Usuario[]>('http://localhost:3000/usuarios',{params:{...formValue}}).subscribe({
       next:(usuarios)=>{
         const usuarioAuth=usuarios[0];
         if(usuarioAuth){
           localStorage.setItem('token', JSON.stringify(usuarioAuth.token));
-          this.userLog$.next(usuarioAuth);
+          this.establecerUserAuth(usuarioAuth);
           this.router.navigate(['dashboard']);
         }else{
           alert('user o password incorrecto')
