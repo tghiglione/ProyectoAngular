@@ -63,8 +63,8 @@ describe('Pruebas del UserLogComponent', () => {
   it('Si el loginForm es valido, debe llamarse al login del LoginService',()=>{
     component.logInForm.setValue({email:'test@mail.com', password: '12345'});
     const spyOnService= spyOn(TestBed.inject(LoginService), 'login');
-    component.logIn();
     expect(component.logInForm.valid).toBeTrue(); //esta linea me sale false
+    component.logIn();
     expect(spyOnService).toHaveBeenCalled();
 });
 });

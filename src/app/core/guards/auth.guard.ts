@@ -20,10 +20,10 @@ export class AuthGuard implements CanActivate {
         }
       }))
     }
-  } 
+  }
 
 /*       PRUEBA A VER SI FUNCIONA EL GUARD. SI FUNCIONA CON ESTO*/                    
-      /* const ejemplo=true;
+/*       const ejemplo=false;
       if(ejemplo){
         console.log(ejemplo)
         return true;
