@@ -11,7 +11,7 @@ export class AuthGuard implements CanActivate {
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-      return this.loginService.verificarToken().pipe(map((autenticado) => {
+       return this.loginService.verificarToken().pipe(map((autenticado) => {
         if (autenticado) {
           return true; // Si el usuario está autenticado, permitimos el acceso al componente de home
         } else {
@@ -20,16 +20,7 @@ export class AuthGuard implements CanActivate {
         }
       }))
     }
-  }
-
-/*       PRUEBA A VER SI FUNCIONA EL GUARD. SI FUNCIONA CON ESTO*/                    
-/*       const ejemplo=false;
-      if(ejemplo){
-        console.log(ejemplo)
-        return true;
-      }else{
-        return this.router.createUrlTree(['auth']);
-      }
   } 
-} */
+
+
 

@@ -16,7 +16,6 @@ export class LoginService {
     email: "",
     password: "",
     token: "",
-    role:""
   });
 
   constructor(private router: Router, private httpClient: HttpClient) { }
@@ -34,7 +33,7 @@ export class LoginService {
       next:(usuarios)=>{
         const usuarioAuth=usuarios[0];
         if(usuarioAuth){
-          localStorage.setItem('token', JSON.stringify(usuarioAuth.token));
+          localStorage.setItem('token', usuarioAuth.token);
           this.establecerUserAuth(usuarioAuth);
           this.router.navigate(['dashboard']);
         }else{
@@ -53,7 +52,7 @@ export class LoginService {
       email: "",
       password: "",
       token: "",
-      role:""});
+    });
     this.router.navigate(['auth']);
   }
 
@@ -74,7 +73,7 @@ export class LoginService {
             localStorage.setItem('token', usuarioAutenticado.token)
             this.userLog$.next(usuarioAutenticado);
           }
-          return true;
+          return !!usuarioAutenticado;
         }),
         catchError((err) => {
           alert('Error al verificar el token');

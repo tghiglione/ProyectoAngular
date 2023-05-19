@@ -6,8 +6,7 @@
       "apellido": "Ghiglione",
       "email": "tomasghiglione@gmail.com",
       "password": "12345",
-      "token": "sjdofjspdjfp23r25cds3vv5sv3sd",
-      "role": "admin"
+      "token": "sjdofjspdjfp23r25cds3vv5sv3sd"
     },
     {
       "nombre": "Juan",
@@ -15,7 +14,6 @@
       "email": "juanperez@gmail.com",
       "password": "12345",
       "token": "jfajfoqwfaf45a4fw6532",
-      "role": "admin",
       "id": 2
     }
   ]

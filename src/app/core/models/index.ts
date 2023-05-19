@@ -26,5 +26,4 @@ export interface Usuario{
   email: string,
   password: string,
   token: string,
-  role:string
 }
