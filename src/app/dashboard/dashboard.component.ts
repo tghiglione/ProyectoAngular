@@ -31,7 +31,11 @@ export class DashboardComponent {
     {
       path: 'cursos',
       title: 'Cursos'
-    }  
+    },
+    {
+      path: 'inscripciones',
+      title: 'Inscripciones'
+    }   
   ]
   logOut(): void {
     this.loginService.logout()

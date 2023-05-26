@@ -12,6 +12,7 @@ import { AppRoutingModule } from '../app-routing.module';
 import { RouterModule, Routes } from '@angular/router';
 import { CursosComponent } from './pages/cursos/cursos.component';
 import { AlumnosComponent } from './pages/alumnos/alumnos.component';
+import { InscripcionesComponent } from './pages/inscripciones/inscripciones.component';
 
 
 const routes: Routes = [
@@ -22,6 +23,10 @@ const routes: Routes = [
   {
     path:'alumnos',
     component:AlumnosComponent
+  },
+  {
+    path:'inscripciones',
+    component:InscripcionesComponent
   }
 ]
 

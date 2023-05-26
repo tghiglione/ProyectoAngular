@@ -12,6 +12,9 @@ import { InscripcionDialogComponent } from './inscripcion-dialog/inscripcion-dia
   ],
   imports: [
     CommonModule
+  ],
+  exports:[
+    InscripcionesComponent
   ]
 })
 export class InscripcionesModule { }
